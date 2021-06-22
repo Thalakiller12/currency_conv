@@ -16,11 +16,11 @@ router.get('/saved',(req,res,next)=>{
         data.push(cb.date);
         data.push(cb.result);
         console.log(data);
-        res.render('authorized/saved',{data:data});
+        res.render('authorized/saved',{data:data,userType:'authorized'});
      }
 });
 
 router.get('/',(req,res)=>{
-    res.render('authorized/home');
+    res.render('home',{userType:'authorized'});
 });
 module.exports = router;
